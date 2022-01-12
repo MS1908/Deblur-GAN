@@ -65,8 +65,8 @@ class DeblurProcessor:
 
 if __name__ == '__main__':
     deblur = DeblurProcessor(model_type='fpn_mobilenetv3', weight_path='weights/best_fpn_mbnet_v3.h5')
-    image = cv2.imread('datasets/test/blur.jpg')
+    image = cv2.imread('datasets/test/blur_test.jpg')
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     deblurred = deblur(image)
     deblurred = cv2.cvtColor(deblurred, cv2.COLOR_RGB2BGR)
-    cv2.imwrite('datasets/test/deblurred.jpg', deblurred)
+    cv2.imwrite('datasets/test/mbnetv3_deblurred.jpg', deblurred)
