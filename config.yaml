@@ -1,6 +1,6 @@
 ---
 project: deblur_gan
-experiment_desc: fpn_mbnet_v2
+experiment_desc: fpn_mbnet_v3
 
 train:
   files_a: datasets/train/blur/*.png
@@ -41,7 +41,7 @@ val:
 phase: train
 warmup_num: 3
 model:
-  g_name: fpn_mobilenetv2
+  g_name: fpn_mobilenetv3
   d_name: double_gan
   content_loss: perceptual
   adv_lambda: 0.001
@@ -50,7 +50,7 @@ model:
   norm_type: instance
   dropout: True
 
-num_epochs: 30
+num_epochs: 150
 train_batches_per_epoch: 1000
 val_batches_per_epoch: 100
 batch_size: 1

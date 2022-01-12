@@ -1,8 +1,13 @@
+import numpy as np
+import torch
 import yaml
 from torch.utils.data import DataLoader
 from functools import partial
 from dataset_utils.dataset_loader import load_dataset_from_config
 from train_utils.trainer_utils import Trainer
+
+torch.manual_seed(42)
+np.random.seed(42)
 
 
 def train(config_path='config.yaml'):
